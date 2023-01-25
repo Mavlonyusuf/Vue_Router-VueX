@@ -37,7 +37,10 @@
   </div>
 </template>
 <script>
-import { RouterLink, RouterView } from "vue-router";
-export default {};
+import { RouterLink } from "vue-router";
+
+export default {
+  setup() {},
+};
 </script>
 <style></style>

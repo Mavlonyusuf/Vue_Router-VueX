@@ -2,16 +2,24 @@
   <pre class="text-2xl text-center mt-60 text-red-500">{{ count }}</pre>
   <div class="flex justify-center h-full" v-if="isTrue">
     <button
-      @click="decrementState"
+      @click="decrement"
       class="px-10 py-2 mt-20 text-xl text-slate-200 font-medium rounded bg-indigo-500 shadow-xl shadow-indigo-500"
     >
       Remove
     </button>
     <button
-      @click="incrementState"
+      @click="increment"
       class="px-10 py-2 mt-20 ml-4 text-xl text-slate-200 font-medium rounded bg-indigo-500 shadow-xl shadow-indigo-500"
     >
       Add
+    </button>
+    <button
+      :disabled="isLoading"
+      @click="setLoading"
+      :class="{ disabled: isLoading }"
+      class="px-10 py-2 mt-20 ml-4 text-xl text-slate-200 font-medium rounded bg-red-500 shadow-xl shadow-indigo-500"
+    >
+      Loading ...
     </button>
   </div>
   <div class="h-full" v-else>
@@ -41,9 +49,12 @@ export default {
       increment,
       decrement,
       isTrue,
-      count: computed(() => store.state.count),
-      incrementState: () => store.commit("increment"),
-      decrementState: () => store.commit("decrement"),
+      isLoading: computed(() => store.state.Auth.isLoading),
+      setLoading: (e) => {
+        e.preventDefault();
+        store.commit("setLoading");
+        console.log("done");
+      },
     };
   },
 };
@@ -53,5 +64,8 @@ export default {
 
 body {
   font-family: "Montserrat", sans-serif;
+}
+.disabled {
+  opacity: 0.7;
 }
 </style>

@@ -53,6 +53,9 @@
         >
       </div>
       <button
+        :disabled="isLoading"
+        @click="setLoading"
+        :class="{ disabled: isLoading }"
         type="submit"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
@@ -62,6 +65,24 @@
   </div>
 </template>
 <script>
-export default {};
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
+export default {
+  setup() {
+    const store = useStore();
+    return {
+      isLoading: computed(() => store.state.Auth.isLoading),
+      setLoading: (e) => {
+        e.preventDefault();
+        store.dispatch("register");
+        console.log("done");
+      },
+    };
+  },
+};
 </script>
-<style></style>
+<style>
+.disabled {
+  opacity: 0.7;
+}
+</style>

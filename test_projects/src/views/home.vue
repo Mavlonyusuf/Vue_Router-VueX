@@ -13,14 +13,6 @@
     >
       Add
     </button>
-    <button
-      :disabled="isLoading"
-      @click="setLoading"
-      :class="{ disabled: isLoading }"
-      class="px-10 py-2 mt-20 ml-4 text-xl text-slate-200 font-medium rounded bg-red-500 shadow-xl shadow-indigo-500"
-    >
-      Loading ...
-    </button>
   </div>
   <div class="h-full" v-else>
     <p>
@@ -49,12 +41,6 @@ export default {
       increment,
       decrement,
       isTrue,
-      isLoading: computed(() => store.state.Auth.isLoading),
-      setLoading: (e) => {
-        e.preventDefault();
-        store.commit("setLoading");
-        console.log("done");
-      },
     };
   },
 };
@@ -64,8 +50,5 @@ export default {
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-.disabled {
-  opacity: 0.7;
 }
 </style>

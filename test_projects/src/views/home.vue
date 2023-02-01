@@ -1,24 +1,26 @@
 <template>
-  <pre class="text-2xl text-center mt-60 text-red-500">{{ count }}</pre>
-  <div class="flex justify-center h-full" v-if="isTrue">
-    <button
-      @click="decrement"
-      class="px-10 py-2 mt-20 text-xl text-slate-200 font-medium rounded bg-indigo-500 shadow-xl shadow-indigo-500"
-    >
-      Remove
-    </button>
-    <button
-      @click="increment"
-      class="px-10 py-2 mt-20 ml-4 text-xl text-slate-200 font-medium rounded bg-indigo-500 shadow-xl shadow-indigo-500"
-    >
-      Add
-    </button>
-  </div>
-  <div class="h-full" v-else>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam accusantium odit
-      nulla aspernatur odio corporis placeat tempora dolores illum sequi!
-    </p>
+  <div class="home-items dark:bg-slate-900 h-screen flex justify-center flex-col">
+    <pre class="text-2xl text-center text-red-500">{{ count }}</pre>
+    <div class="flex justify-center" v-if="isTrue">
+      <button
+        @click="decrement"
+        class="px-10 py-2 mt-20 text-xl text-slate-200 font-medium rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500"
+      >
+        Remove
+      </button>
+      <button
+        @click="increment"
+        class="px-10 py-2 mt-20 ml-4 text-xl text-slate-200 font-medium rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500"
+      >
+        Add
+      </button>
+    </div>
+    <div class="h-full" v-else>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam accusantium odit
+        nulla aspernatur odio corporis placeat tempora dolores illum sequi!
+      </p>
+    </div>
   </div>
 </template>
 <script>

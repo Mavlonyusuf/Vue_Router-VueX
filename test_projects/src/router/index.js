@@ -1,25 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const lazyLoad = (componentPath) => {
+const lazyLoad = componentPath => {
   return () => 
-    import(`@/views/${componentPath}.vue`)
+import (`../views/${componentPath}.vue`)
 }
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: () => import("@/views/home.vue")
+      component: () => import ("@/views/home.vue")
     },
     {
       path: '/login',
       name: 'login',
-      component: lazyLoad("login")
+      component: () => import ("@/views/login.vue")
     },
     {
       path: '/register',
       name: 'register',
-      component: lazyLoad("register")
+      component: () => import ("@/views/register.vue")
     }
   ]
 })

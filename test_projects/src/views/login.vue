@@ -1,28 +1,32 @@
 <template>
-  <div class="login-items flex justify-center h-screen">
+  <div class="flex justify-center h-screen dark:bg-slate-900">
     <form
-      class="w-3/12 flex flex-col mx-auto my-auto shadow-2xl shadow-indigo-300 p-5 rounded-xl"
+      class="w-3/12 flex flex-col dark:bg-slate-800 mx-auto my-auto shadow-2xl shadow-indigo-300 p-5 rounded-xl dark:shadow-slate-900"
     >
       <div class="mb-6">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900"
+        <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-slate-900 dark:text-slate-200"
           >Your email</label
         >
         <input
           type="email"
           id="email"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="user12345@qw.com"
           required
         />
       </div>
       <div class="mb-6">
-        <label for="password" class="block mb-2 text-sm font-medium text-gray-900"
+        <label
+          for="password"
+          class="block mb-2 text-sm font-medium text-slate-900 dark:text-slate-200"
           >Your password</label
         >
         <input
           type="password"
           id="password"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           required
         />
       </div>
@@ -32,11 +36,13 @@
             id="remember"
             type="checkbox"
             value=""
-            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+            class="w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-blue-300 dark:bg-slate-700 dark:border-slate-600 dark:focus:ring-blue-600 dark:ring-offset-slate-800 dark:focus:ring-offset-slate-800"
             required
           />
         </div>
-        <label for="remember" class="ml-2 text-sm font-medium text-gray-900"
+        <label
+          for="remember"
+          class="ml-2 text-sm font-medium text-slate-900 dark:text-slate-200"
           >Remember me</label
         >
       </div>
@@ -59,8 +65,4 @@ export default {
   },
 };
 </script>
-<style>
-.login-items {
-  margin-top: -4.5rem;
-}
-</style>
+<style></style>

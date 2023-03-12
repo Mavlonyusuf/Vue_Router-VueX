@@ -80,13 +80,23 @@ import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import { useDark, useToggle } from "@vueuse/core";
 export default {
-  setup() {
+  props: {
+    id: Number,
+    greeting: String,
+    likes: Number,
+    isArr: Object,
+  },
+  setup(props) {
     const isDark = useDark();
     const toggleDark = useToggle(isDark);
     const isTrue = ref(isDark.value);
     const toggleTrue = () => {
       isTrue.value = !isTrue.value;
     };
+    console.log(props.id);
+    console.log(props.greeting);
+    console.log(props.likes);
+    console.log(typeof props.isArr);
     return { isDark, toggleDark, isTrue, toggleTrue };
   },
 };
